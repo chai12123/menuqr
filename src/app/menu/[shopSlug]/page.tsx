@@ -1,13 +1,19 @@
-import { createClient } from '@/lib/supabase/server'
 import { notFound } from 'next/navigation'
 import { PublicMenu } from './public-menu'
 import { Metadata } from 'next'
+import { createClient } from '@supabase/supabase-js'
 
-// Next.js config for caching
 export const revalidate = 60
 
+function getPublicClient() {
+  return createClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+  )
+}
+
 export async function generateMetadata({ params }: { params: { shopSlug: string } }): Promise<Metadata> {
-  const supabase = createClient()
+  const supabase = getPublicClient()
   const { data: shop } = await supabase.from('shops').select('name_th, name_en, description_th, description_en, logo_url').eq('slug', params.shopSlug).single()
   
   if (!shop) return { title: 'Shop Not Found' }
@@ -22,13 +28,13 @@ export async function generateMetadata({ params }: { params: { shopSlug: string 
 }
 
 export async function generateStaticParams() {
-  const supabase = createClient()
+  const supabase = getPublicClient()
   const { data: shops } = await supabase.from('shops').select('slug').eq('is_active', true)
   return shops?.map(s => ({ shopSlug: s.slug })) || []
 }
 
 export default async function MenuPage({ params }: { params: { shopSlug: string } }) {
-  const supabase = createClient()
+  const supabase = getPublicClient()
   
   const { data: shop } = await supabase
     .from('shops')
