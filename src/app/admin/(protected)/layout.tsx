@@ -12,7 +12,7 @@ import {
   LogOut,
   Store,
 } from 'lucide-react'
-import { logout } from './actions'
+import { logout } from '../actions'
 
 export default async function AdminLayout({ children }: { children: ReactNode }) {
   const supabase = createClient()
