@@ -23,15 +23,15 @@ export default async function MenuItemsPage() {
     .order('created_at', { ascending: false })
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 font-sans">
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
         <div>
-          <h1 className="text-3xl font-bold tracking-tight">Menu Items</h1>
-          <p className="text-muted-foreground">Manage your food and beverage offerings.</p>
+          <h1 className="text-3xl font-bold tracking-tight text-foreground">จัดการเมนูอาหาร</h1>
+          <p className="text-muted-foreground mt-1 text-sm">จัดการรูปภาพ ราคา สถานะของหมด/พร้อมขาย ของเมนูทั้งหมดในร้าน</p>
         </div>
-        <Button className="bg-primary hover:bg-primary/90" asChild>
+        <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold rounded-full shadow-md h-12 px-6" asChild>
           <Link href="/admin/menu/new">
-            <Plus className="mr-2 h-4 w-4" /> Add Item
+            <Plus className="mr-2 h-5 w-5" /> เพิ่มเมนูใหม่
           </Link>
         </Button>
       </div>

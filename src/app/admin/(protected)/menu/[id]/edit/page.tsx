@@ -24,10 +24,10 @@ export default async function EditMenuItemPage({ params }: { params: { id: strin
     .order('sort_order')
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 font-sans">
       <div>
-        <h1 className="text-3xl font-bold tracking-tight">Edit Menu Item</h1>
-        <p className="text-muted-foreground">Update your existing menu item.</p>
+        <h1 className="text-3xl font-bold tracking-tight text-foreground">แก้ไขข้อมูลเมนู</h1>
+        <p className="text-muted-foreground mt-1 text-sm">เปลี่ยนรูปภาพ ราคา หรือคำอธิบายของเมนูนี้</p>
       </div>
       <MenuForm item={item} categories={categories || []} shopId={shop!.id} />
     </div>

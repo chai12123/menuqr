@@ -25,40 +25,40 @@ export default function RegisterPage() {
   }
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-muted/40 p-4">
-      <Card className="w-full max-w-sm">
-        <CardHeader className="space-y-1 flex flex-col items-center text-center">
-          <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-2">
-            <Utensils className="w-6 h-6 text-primary" />
+    <div className="flex min-h-screen items-center justify-center bg-muted/40 p-4 font-sans">
+      <Card className="w-full max-w-sm border-0 shadow-xl rounded-3xl">
+        <CardHeader className="space-y-2 flex flex-col items-center text-center pb-6">
+          <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-2">
+            <Utensils className="w-8 h-8 text-primary" />
           </div>
-          <CardTitle className="text-2xl font-bold">Create an account</CardTitle>
+          <CardTitle className="text-2xl font-bold">เปิดร้านค้าใหม่</CardTitle>
           <CardDescription>
-            Enter your details below to create your free shop account
+            กรอกข้อมูลด้านล่างเพื่อสร้างบัญชีร้านค้าของคุณฟรี
           </CardDescription>
         </CardHeader>
         <form action={handleRegister}>
-          <CardContent className="space-y-4">
+          <CardContent className="space-y-5">
             <div className="space-y-2">
-              <Label htmlFor="fullName">Shop / Full Name</Label>
-              <Input id="fullName" name="fullName" placeholder="My Awesome Cafe" required />
+              <Label htmlFor="fullName" className="font-semibold">ชื่อร้านค้า (หรือชื่อผู้ดูแล)</Label>
+              <Input id="fullName" name="fullName" placeholder="ร้านอาหารอร่อย" className="h-12 rounded-xl bg-muted/50" required />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="email">Email</Label>
-              <Input id="email" name="email" type="email" placeholder="m@example.com" required />
+              <Label htmlFor="email" className="font-semibold">อีเมล</Label>
+              <Input id="email" name="email" type="email" placeholder="example@email.com" className="h-12 rounded-xl bg-muted/50" required />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="password">Password</Label>
-              <Input id="password" name="password" type="password" required minLength={6} />
+              <Label htmlFor="password" className="font-semibold">รหัสผ่าน</Label>
+              <Input id="password" name="password" type="password" className="h-12 rounded-xl bg-muted/50" required minLength={6} placeholder="อย่างน้อย 6 ตัวอักษร" />
             </div>
           </CardContent>
-          <CardFooter className="flex flex-col space-y-4">
-            <Button className="w-full bg-primary" type="submit" disabled={isLoading}>
-              {isLoading ? 'Creating account...' : 'Create account'}
+          <CardFooter className="flex flex-col space-y-4 pt-4">
+            <Button className="w-full h-12 rounded-xl font-bold text-base shadow-md hover:shadow-lg transition-all" type="submit" disabled={isLoading}>
+              {isLoading ? 'กำลังสร้างบัญชี...' : 'สร้างบัญชีร้านค้า'}
             </Button>
-            <div className="text-sm text-center text-muted-foreground">
-              Already have an account?{' '}
-              <Link href="/admin/login" className="text-primary hover:underline">
-                Log in
+            <div className="text-sm text-center text-muted-foreground pt-4 border-t w-full">
+              มีบัญชีอยู่แล้วใช่หรือไม่?{' '}
+              <Link href="/admin/login" className="text-primary font-bold hover:underline">
+                เข้าสู่ระบบ
               </Link>
             </div>
           </CardFooter>

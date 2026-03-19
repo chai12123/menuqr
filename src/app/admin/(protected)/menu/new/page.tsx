@@ -18,10 +18,10 @@ export default async function NewMenuItemPage() {
     .order('sort_order')
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 font-sans">
       <div>
-        <h1 className="text-3xl font-bold tracking-tight">Add Menu Item</h1>
-        <p className="text-muted-foreground">Create a new item for your menu.</p>
+        <h1 className="text-3xl font-bold tracking-tight text-foreground">เพิ่มเมนูใหม่</h1>
+        <p className="text-muted-foreground mt-1 text-sm">สร้างและเพิ่มเมนูอาหารใหม่ลงในร้านของคุณ</p>
       </div>
       <MenuForm categories={categories || []} shopId={shop!.id} />
     </div>

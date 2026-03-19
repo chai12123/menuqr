@@ -16,47 +16,47 @@ export default function LandingPage() {
         </div>
         
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter text-foreground drop-shadow-sm">
-          Welcome to <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-orange-500 to-amber-500">MenuQR</span>
+          ยินดีต้อนรับสู่ <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-orange-500 to-amber-500">MenuQR</span>
         </h1>
         
         <p className="text-lg md:text-2xl text-muted-foreground max-w-2xl mx-auto leading-relaxed font-medium">
-          The fastest and most beautiful way to create, manage, and share digital menus for your restaurant.
+          ระบบสร้างและจัดการเมนูอาหารดิจิทัลที่รวดเร็วและสวยงามที่สุดสำหรับร้านอาหารของคุณ
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto mt-16 mb-12 text-left pt-8">
           <div className="bg-card/60 backdrop-blur-sm p-8 rounded-3xl border border-border/50 shadow-lg flex flex-col items-start gap-4 hover:bg-card hover:-translate-y-2 transition-all duration-300">
             <div className="p-3 bg-gradient-to-br from-primary/20 to-primary/5 rounded-2xl border border-primary/20 shadow-inner"><Smartphone className="w-8 h-8 text-primary" /></div>
-            <h3 className="font-bold text-xl">Mobile First</h3>
-            <p className="text-sm text-muted-foreground leading-relaxed">Stunning, app-like menus perfectly optimized for your customers' smartphones.</p>
+            <h3 className="font-bold text-xl">รองรับมือถือ 100%</h3>
+            <p className="text-sm text-muted-foreground leading-relaxed">หน้าเมนูที่สวยงามเหมือนมีแอปพลิเคชันส่วนตัว ออกแบบมาเพื่อให้ลูกค้าใช้งานผ่านสมาร์ตโฟนได้อย่างลื่นไหล</p>
           </div>
           <div className="bg-card/60 backdrop-blur-sm p-8 rounded-3xl border border-border/50 shadow-lg flex flex-col items-start gap-4 hover:bg-card hover:-translate-y-2 transition-all duration-300 delay-75">
             <div className="p-3 bg-gradient-to-br from-primary/20 to-primary/5 rounded-2xl border border-primary/20 shadow-inner"><Zap className="w-8 h-8 text-primary" /></div>
-            <h3 className="font-bold text-xl">Instant Updates</h3>
-            <p className="text-sm text-muted-foreground leading-relaxed">Change prices, update photos, or mark items sold out in real-time instantly across all devices.</p>
+            <h3 className="font-bold text-xl">อัปเดตแบบเรียลไทม์</h3>
+            <p className="text-sm text-muted-foreground leading-relaxed">เปลี่ยนราคา อัปเดตภาพอาหาร หรือแจ้งสินค้าหมด ข้อมูลบนหน้าจอของลูกค้าจะเปลี่ยนแปลงทันทีโดยไม่ต้องรีเฟรช</p>
           </div>
           <div className="bg-card/60 backdrop-blur-sm p-8 rounded-3xl border border-border/50 shadow-lg flex flex-col items-start gap-4 hover:bg-card hover:-translate-y-2 transition-all duration-300 delay-150">
             <div className="p-3 bg-gradient-to-br from-primary/20 to-primary/5 rounded-2xl border border-primary/20 shadow-inner"><QrCode className="w-8 h-8 text-primary" /></div>
-            <h3 className="font-bold text-xl">Custom QR Codes</h3>
-            <p className="text-sm text-muted-foreground leading-relaxed">Generate print-ready QR code standees with your restaurant logo directly from the dashboard.</p>
+            <h3 className="font-bold text-xl">สร้าง QR Code พร้อมพิมพ์</h3>
+            <p className="text-sm text-muted-foreground leading-relaxed">ออกแบบและดาวน์โหลด QR Code สำหรับตั้งป้ายบนโต๊ะอาหาร พร้อมแนบโลโก้ร้านของคุณเองได้ทันที</p>
           </div>
         </div>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-8">
           <Link href="/admin/register">
             <Button size="lg" className="w-full sm:w-auto text-lg h-14 px-8 rounded-full shadow-[0_0_40px_-10px_rgba(249,115,22,0.8)] hover:shadow-[0_0_60px_-15px_rgba(249,115,22,1)] transition-all hover:-translate-y-1 font-bold">
-              Create Your Shop <ArrowRight className="ml-2 w-5 h-5" />
+              เปิดร้านค้าใหม่ฟรี <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
           </Link>
           <Link href="/admin/login">
             <Button size="lg" variant="outline" className="w-full sm:w-auto text-lg h-14 px-8 rounded-full bg-background/50 backdrop-blur-md border-2 hover:bg-muted font-bold transition-all">
-              Login to Dashboard
+              เข้าสู่ระบบหลังบ้าน
             </Button>
           </Link>
         </div>
       </main>
 
       <footer className="absolute bottom-6 text-center text-xs sm:text-sm text-muted-foreground font-medium tracking-wide w-full">
-        Powered by Next.js 14, Supabase, and Tailwind CSS
+        ขับเคลื่อนโดย Next.js 14, Supabase และ Tailwind CSS
       </footer>
     </div>
   )

@@ -11,7 +11,7 @@ export default async function CategoriesPage() {
     .eq('owner_id', user?.id)
     .single()
 
-  if (!shop) return <div>No shop found.</div>
+  if (!shop) return <div className="p-8 text-center text-muted-foreground">ไม่พบข้อมูลร้านค้า</div>
 
   // Fetch categories with menu item count
   const { data: categories } = await supabase
@@ -25,5 +25,13 @@ export default async function CategoriesPage() {
     items_count: c.menu_items[0]?.count || 0
   })) || []
 
-  return <CategoryList initialCategories={formattedCategories} shopId={shop.id} />
+  return (
+    <div className="space-y-6 font-sans">
+      <div>
+        <h1 className="text-3xl font-bold tracking-tight text-foreground">จัดการหมวดหมู่เมนู</h1>
+        <p className="text-muted-foreground mt-1 text-sm">จัดเรียง ลบ หรือเพิ่มหมวดหมู่ใหม่ (ลูกค้าจะเห็นเรียงตามลำดับนี้)</p>
+      </div>
+      <CategoryList initialCategories={formattedCategories} shopId={shop.id} />
+    </div>
+  )
 }
